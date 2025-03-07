@@ -1,38 +1,55 @@
 #include <stdio.h>
-#define MAX_USERS 3
-
-// Define a struct to represent a user
-struct User {
-    int id;
-    char name[50];
-    int balance;
-};
+#include "create.h"
 
 int main() {
-    // Create two users
-    struct User users[MAX_USERS];
-    for(int i = 0;i < MAX_USERS; i++){
-        printf("\n Enter the id:");
-        scanf("%d",&users[i].id);
-        printf("\n Enter the name:");
-        scanf("%s",&users[i].name);
-        printf("\n Enter the balance:");
-        scanf("%d",&users[i].balance);
-    }
-    for(int i = 0; i < MAX_USERS; i++){
-        printf("%d",users[i].id);
-        printf("%s",users[i].name);
-        printf("%d",users[i].balance);
+    int options;
+    struct User users[100];
+    int countUsers=0;
 
+    while (1) {
+        printf("\nSelect an option:\n");
+        printf("1. Create User\n");
+        printf("2. Delete User\n");
+        printf("3. Credit Money\n");
+        printf("4. Debit Money\n");
+        printf("5. Transfer Money\n");
+        printf("6. Update Users\n");
+        printf("7. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &options);
+
+        switch (options) {
+            case 1:
+                printf("\nCreate User\n");
+                createUser(users,&countUsers);
+                break;
+            case 2:
+                printf("\nDelete User\n");
+//                deleteUser();
+                break;
+            case 3:
+                printf("\nCredit Money\n");
+//                creditMoney();
+                break;
+            case 4:
+                printf("\nDebit Money\n");
+//                debitMoney();
+                break;
+            case 5:
+                printf("\nTransfer Money\n");
+//                transferMoney();
+                break;
+            case 6:
+                printf("\nUpdate User\n");
+                updateUser(users,&countUsers);
+                break;
+            case 7:
+                return 0;
+            default:
+                printf("Invalid choice. Please select a valid option.\n");
+        }
     }
 
-    int find,i;
-    printf("\n Enter the UserID to check the balance: ");
-    scanf("%d", &find);
-
-    for(int i=0; i< MAX_USERS; i++){
-            if(find==users[i].id){
-                 printf("\n Balance of user %d: %d",find,users[i].balance);
-    }
-}
+    return 0;
 }
