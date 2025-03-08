@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1741328780 source:c:\users\student\desktop\4vv22ec164\banking_project\create_user.c
+	<stdio.h>
+	"create.h"
+
+1741408140 c:\users\student\desktop\4vv22ec164\banking_project\create.h
+
+1741408266 source:c:\users\student\desktop\4vv22ec164\banking_project\main.c
+	<stdio.h>
+	"create.h"
+
+1741330913 source:c:\users\student\desktop\4vv22ec164\banking_project\update_user.c
+	<stdio.h>
+	"create.h"
+
+1741409066 source:c:\users\student\desktop\4vv22ec164\banking_project\passbook.c
+	<stdio.h>
+	"create.h"
+
